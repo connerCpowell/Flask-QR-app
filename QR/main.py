@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 # from qr import qr_maker
 # from PIL import Image
 
@@ -12,7 +12,12 @@ def index():
     #img1.show()
     #img2.show()
 
-    return "Congrats broheimia, you like finally made it to the page"
+    #return "Congrats broheimia, you like finally made it to the page"
+    return render_template("home.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 @app.route("/<int:celsius>")
 def fahrenheit_from(celsius):
